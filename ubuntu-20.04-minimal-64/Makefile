@@ -17,11 +17,8 @@ all: info/init_ok
 	dab exec dpkg --purge postfix
 	dab install bzip2 dialog wget traceroute logrotate net-tools
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
-	echo "#!/bin/sh -e" >${BASEDIR}/etc/rc.local
-	echo "lsb_release -d -s >/etc/issue" >>${BASEDIR}/etc/rc.local
-	echo "printf "\nIP-address: %s\n\n" `hostname -I` >>/etc/issue" >> ${BASEDIR}/etc/rc.local
-	echo "exit 0" >> ${BASEDIR}/etc/rc.local
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
+	cp rc.local ${BASEDIR}/etc/rc.local
 	dab exec chmod +x ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
 	dab exec systemctl disable ssh.socket
