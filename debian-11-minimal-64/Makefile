@@ -19,7 +19,6 @@ all: info/init_ok
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	cp rc.local ${BASEDIR}/etc/rc.local
-	dab exec chmod +x ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
 	dab exec systemctl disable ssh.socket
 	dab exec systemctl enable ssh.service
