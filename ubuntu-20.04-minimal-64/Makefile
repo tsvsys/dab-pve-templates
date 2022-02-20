@@ -20,8 +20,6 @@ all: info/init_ok
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	cp rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
-	dab exec systemctl disable ssh.socket
-	dab exec systemctl enable ssh.service
 	dab finalize
 
 info/init_ok: dab.conf
