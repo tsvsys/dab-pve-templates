@@ -12,4 +12,3 @@ SysVStartPriority=99
  
 [Install]
 WantedBy=multi-user.target
-EOF
