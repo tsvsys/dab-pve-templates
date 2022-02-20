@@ -15,7 +15,7 @@ all: info/init_ok
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	
 	dab exec dpkg --purge postfix
-	dab install bzip2 dialog wget traceroute logrotate net-tools
+	dab install bzip2 dialog wget traceroute logrotate net-tools vim-nox
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	cp rc.local ${BASEDIR}/etc/rc.local
