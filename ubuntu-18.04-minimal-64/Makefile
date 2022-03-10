@@ -7,7 +7,6 @@ all: info/init_ok
 	echo "APT::Install-Recommends \"false\";" > ${BASEDIR}/etc/apt/apt.conf.d/00InstallRecommends
 	echo "en_US.UTF-8" >${BASEDIR}/etc/locale
 	echo "en_US.UTF-8 UTF-8" > ${BASEDIR}/etc/locale.gen
-	echo "ru_RU.UTF-8 UTF-8" >> ${BASEDIR}/etc/locale.gen
 	dab install locales
 	dab exec dpkg-reconfigure -f noninteractive locales
 	echo "Europe/Sofia" > ${BASEDIR}/etc/timezone
