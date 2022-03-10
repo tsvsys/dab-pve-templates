@@ -13,5 +13,6 @@ timezone set to Europe/Sofia
 installed additional packages: 
 bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox
 
-added a script /etc/rc.local and enabled the rc-local.service systemd unit in order to show the VM IP address in a ProxmoxVE VM Console
+added a script /etc/rc.local and enabled the rc-local.service systemd unit 
+in order to show the VM IP address in a ProxmoxVE VM Console
 ```
