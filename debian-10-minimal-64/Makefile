@@ -19,8 +19,9 @@ all: info/init_ok
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	install -m 0755 rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
-	dab finalize
-
+#	dab finalize
+	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
+	dab finalize --compressor zstd-max
 info/init_ok: dab.conf
 	dab init
 	touch $@
