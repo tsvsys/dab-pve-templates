@@ -8,7 +8,8 @@ changelog:
 set the PermitRootLogin to yes in /etc/ssh/sshd_config
 removed postfix from all images.
 pre-generated locale en_US.UTF-8
-timezone set to Europe/Sofia
+timezone set to Europe/Sofia (can be changed in Makefile)
+set APT::Install-Recommends "false"; to /etc/apt/apt.conf.d/00InstallRecommends
 
 installed additional packages: 
 bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox
