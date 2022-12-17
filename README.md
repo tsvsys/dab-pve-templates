@@ -12,7 +12,7 @@ timezone set to Europe/Sofia (can be changed in Makefile)
 set APT::Install-Recommends "false"; to /etc/apt/apt.conf.d/00InstallRecommends
 
 installed additional packages: 
-bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox
+bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox, python3
 
 added a script /etc/rc.local and enabled the rc-local.service systemd unit 
 in order to show the VM IP address in a ProxmoxVE VM Console
