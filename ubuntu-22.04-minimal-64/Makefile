@@ -19,6 +19,9 @@ all: info/init_ok
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	install -m 0755 rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
+	# mask not needed services
+	dab exec systemctl mask sys-kernel-config.mount
+	dab exec systemctl mask systemd-journald-audit.socket
 #	dab finalize
 	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
 	dab finalize --compressor zstd-max
