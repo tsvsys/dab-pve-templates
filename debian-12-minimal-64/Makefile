@@ -15,7 +15,7 @@ all: info/init_ok
 	echo "Europe/Sofia" > ${BASEDIR}/etc/timezone
 	dab exec cp /usr/share/zoneinfo/Europe/Sofia /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
-	# base sowftware
+	# base software
 	dab exec dpkg --purge postfix
 	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3
 	# enable root login over ssh and disable DNS for SSHD
