@@ -27,6 +27,7 @@ all: info/init_ok
 #	dab finalize
 	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
 	dab finalize --compressor zstd-max
+
 info/init_ok: dab.conf
 	dab init
 	touch $@
