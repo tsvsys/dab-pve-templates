@@ -14,14 +14,13 @@ all: info/init_ok
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	
 	dab exec dpkg --purge postfix
-	dab install bzip2 dialog wget traceroute logrotate net-tools vim-nox python3
+	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	sed -i 's/#UseDNS no/UseDNS no/g' ${BASEDIR}/etc/ssh/sshd_config
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	install -m 0755 rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
 	# mask not needed services
-	dab exec systemctl mask sshd.socket
 	dab exec systemctl mask sys-kernel-config.mount
 	dab exec systemctl mask systemd-journald-audit.socket
 #	dab finalize
