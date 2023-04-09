@@ -4,7 +4,7 @@ BASEDIR:=$(shell dab basedir)
 
 all: info/init_ok
 	dab bootstrap --minimal
-	# diable install recommends for apt
+	# disable install recommends for apt
 	echo "APT::Install-Recommends \"false\";" > ${BASEDIR}/etc/apt/apt.conf.d/00InstallRecommends
 	# configure locale
 	echo "en_US.UTF-8" >${BASEDIR}/etc/locale
