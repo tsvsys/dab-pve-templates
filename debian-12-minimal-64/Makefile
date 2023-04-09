@@ -4,19 +4,24 @@ BASEDIR:=$(shell dab basedir)
 
 all: info/init_ok
 	dab bootstrap --minimal
+	# diable install recommends for apt
 	echo "APT::Install-Recommends \"false\";" > ${BASEDIR}/etc/apt/apt.conf.d/00InstallRecommends
+    # configure locales
 	echo "en_US.UTF-8" >${BASEDIR}/etc/locale
 	echo "en_US.UTF-8 UTF-8" > ${BASEDIR}/etc/locale.gen
 	dab install locales
 	dab exec dpkg-reconfigure -f noninteractive locales
+	# configure timezone
 	echo "Europe/Sofia" > ${BASEDIR}/etc/timezone
 	dab exec cp /usr/share/zoneinfo/Europe/Sofia /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
-	
+	# base sowftware
 	dab exec dpkg --purge postfix
 	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3
+	# enable root login over ssh and disable DNS for SSHD
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	sed -i 's/#UseDNS no/UseDNS no/g' ${BASEDIR}/etc/ssh/sshd_config
+    # add rc-local service
 	cp rc-local.service ${BASEDIR}/etc/systemd/system/rc-local.service
 	install -m 0755 rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
