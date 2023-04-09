@@ -5,7 +5,8 @@ source https://github.com/tsvsys/dab-pve-templates
 
 changelog:
 
-set the PermitRootLogin to yes in /etc/ssh/sshd_config
+set the 'PermitRootLogin yes' in /etc/ssh/sshd_config
+set the 'UseDNS no' in /etc/ssh/sshd_config
 removed postfix from all images.
 pre-generated locale en_US.UTF-8
 timezone set to Europe/Sofia (can be changed in Makefile)
