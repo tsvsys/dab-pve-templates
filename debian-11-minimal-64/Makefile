@@ -21,7 +21,6 @@ all: info/init_ok
 	install -m 0755 rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
 	# mask not needed services
-	dab exec systemctl mask sshd.socket
 	dab exec systemctl mask sys-kernel-config.mount
 	dab exec systemctl mask systemd-journald-audit.socket
 #	dab finalize
