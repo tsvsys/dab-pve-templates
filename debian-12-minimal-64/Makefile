@@ -28,6 +28,7 @@ all: info/init_ok
 	# mask not needed services
 	dab exec systemctl mask sys-kernel-config.mount
 	dab exec systemctl mask systemd-journald-audit.socket
+	dab exec systemctl mask systemd-networkd-wait-online.service
 #	dab finalize
 	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
 	dab finalize --compressor zstd-max
