@@ -12,8 +12,8 @@ all: info/init_ok
 	dab install locales
 	dab exec dpkg-reconfigure -f noninteractive locales
 	# configure timezone
-	echo "Europe/Sofia" > ${BASEDIR}/etc/timezone
-	dab exec cp /usr/share/zoneinfo/Europe/Sofia /etc/localtime
+	echo "Etc/UTC" > ${BASEDIR}/etc/timezone
+	dab exec cp /usr/share/zoneinfo/Etc/UTC /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	# base software
 	dab exec dpkg --purge postfix

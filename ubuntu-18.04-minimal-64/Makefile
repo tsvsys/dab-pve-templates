@@ -9,8 +9,8 @@ all: info/init_ok
 	echo "en_US.UTF-8 UTF-8" > ${BASEDIR}/etc/locale.gen
 	dab install locales
 	dab exec dpkg-reconfigure -f noninteractive locales
-	echo "Europe/Sofia" > ${BASEDIR}/etc/timezone
-	dab exec cp /usr/share/zoneinfo/Europe/Sofia /etc/localtime
+	echo "Etc/UTC" > ${BASEDIR}/etc/timezone
+	dab exec cp /usr/share/zoneinfo/Etc/UTC /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	
 	dab exec dpkg --purge postfix
