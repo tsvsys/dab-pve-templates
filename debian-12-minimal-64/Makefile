@@ -13,7 +13,7 @@ all: info/init_ok
 	dab exec dpkg-reconfigure -f noninteractive locales
 	# configure timezone
 	echo "Etc/UTC" > ${BASEDIR}/etc/timezone
-	dab exec cp /usr/share/zoneinfo/Etc/UTC /etc/localtime
+	dab exec cp -f /usr/share/zoneinfo/Etc/UTC /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	# base software
 	dab exec dpkg --purge postfix
