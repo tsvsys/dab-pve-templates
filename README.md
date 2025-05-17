@@ -19,6 +19,7 @@ added a script /etc/rc.local and enabled the rc-local.service systemd unit
 in order to show the VM IP address in a ProxmoxVE VM Console
 
 NOTE: ALL templates are set to zstd format, they will work only on PVE v7/v8
+
 NOTE: in order to build debian 13 version template
       you need to have dab 3.7.0 installed on your build host
 ```
