@@ -1,4 +1,4 @@
-# in order to build debian 13 version you need to have dab 3.7.x
+# in order to build debian 13 version you need to have dab 3.7.0 installed on your build host
 
 BASEDIR:=$(shell dab basedir)
 
