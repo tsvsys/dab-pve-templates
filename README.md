@@ -1,6 +1,6 @@
 ```
 templates for Proxmox VE 7.x/8.x/9.x
-built by Debian Appliance Builder (dab)
+to be built by Debian Appliance Builder (dab)
 source https://github.com/tsvsys/dab-pve-templates
 
 changelog:
