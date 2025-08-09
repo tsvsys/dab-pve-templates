@@ -1,5 +1,5 @@
 ```
-templates for Proxmox VE 7.x/8.x
+templates for Proxmox VE 7.x/8.x/9.x
 built by Debian Appliance Builder (dab)
 source https://github.com/tsvsys/dab-pve-templates
 
@@ -18,7 +18,7 @@ bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox, python3
 added a script /etc/rc.local and enabled the rc-local.service systemd unit 
 in order to show the VM IP address in a ProxmoxVE VM Console
 
-NOTE: ALL templates are set to zstd format, they will work only on PVE v7/v8
+NOTE: ALL templates are set to zstd format, they will work only on PVE v7/v8/v9
 
 NOTE: in order to build debian 13 template you need to have dab 3.7.0 installed
       on your build host
