@@ -16,7 +16,7 @@ installed additional packages:
 bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox, python3
 
 added a script /etc/rc.local and enabled the rc-local.service systemd unit 
-in order to show the VM IP address in a ProxmoxVE VM Console
+in order to show the LXC IP address in a ProxmoxVE VM Console
 
 NOTE: ALL templates are set to zstd format, they will work only on PVE v7/v8/v9
 
