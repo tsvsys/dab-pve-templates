@@ -22,4 +22,15 @@ NOTE: ALL templates are set to zstd format, they will work only on PVE v7/v8/v9
 
 NOTE: in order to build debian 13 template you need to have dab 3.7.0 installed
       on your build host
+
+NOTE: in order to build debian 14 forky you need to tweak/edit
+/usr/share/perl5/PVE/DAB.pm after line 77 under "my $supported_suites = {
+add debian 14 lines:
+
+    'forky' => {
+        ostype => "debian-14",
+        modern_apt_sources => 1,
+    },
+
 ```
+
