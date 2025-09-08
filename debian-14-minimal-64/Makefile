@@ -26,8 +26,8 @@ all: info/init_ok
 	install -m 0755 rc.local ${BASEDIR}/etc/rc.local
 	dab exec systemctl enable rc-local
 	# mask not needed services
-	dab exec systemctl mask sys-kernel-config.mount
-	dab exec systemctl mask systemd-journald-audit.socket
+#	dab exec systemctl mask sys-kernel-config.mount # no longer needed, mask added to dab 3.7.0
+#	dab exec systemctl mask systemd-journald-audit.socket # no longer needed, mask added to dab 3.7.0
 	dab exec systemctl mask systemd-networkd-wait-online.service
 #	dab finalize
 	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
