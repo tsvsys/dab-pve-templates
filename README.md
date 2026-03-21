@@ -13,7 +13,7 @@ timezone set to Etc/UTC (can be changed in Makefile)
 set APT::Install-Recommends "false"; to /etc/apt/apt.conf.d/00InstallRecommends
 
 installed additional packages: 
-bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox, python3
+bzip2, wget, dialog, traceroute, logrotate, net-tools, vim-nox, python3 bash-completion
 
 added a script /etc/rc.local and enabled the rc-local.service systemd unit 
 in order to show the LXC IP address in a ProxmoxVE VM Console
