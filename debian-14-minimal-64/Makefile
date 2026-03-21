@@ -17,7 +17,7 @@ all: info/init_ok
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	# base software
 	dab exec apt purge -y postfix postfix-lmdb postfix-cdb
-	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3
+	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3 bash-completion
 	# enable root login over ssh and disable DNS for SSHD
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	sed -i 's/#UseDNS no/UseDNS no/g' ${BASEDIR}/etc/ssh/sshd_config
