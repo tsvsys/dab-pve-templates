@@ -16,7 +16,7 @@ all: info/init_ok
 	dab exec cp --remove-destination -- /usr/share/zoneinfo/Etc/UTC /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	# base software
-	dab exec dpkg --purge postfix
+	dab exec apt purge -y postfix postfix-lmdb postfix-cdb
 	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3
 	# enable root login over ssh and disable DNS for SSHD
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
