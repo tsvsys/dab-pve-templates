@@ -32,5 +32,13 @@ add debian 14 lines:
         modern_apt_sources => 1,
     },
 
+For Ubuntu 26.04 add lines after 129:
+
+    'resolute' => {
+        ostype => "ubuntu-26.04",
+        origin => 'ubuntu',
+        modern_apt_sources => 1,
+    },
+
 ```
 

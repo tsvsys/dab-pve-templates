@@ -1,0 +1,5 @@
+#!/bin/sh -e
+sleep 2
+echo `cat /etc/os-release|grep TTY_NAME|awk -F\" '{print $2}'` >/etc/issue
+printf "\nIP-address: %s\n\n" `hostname -I` >>/etc/issue
+exit 0
