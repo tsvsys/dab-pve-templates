@@ -24,6 +24,8 @@ all: info/init_ok
 #	# mask not needed services, no longer needed, mask added to dab 3.7.0
 #	dab exec systemctl mask sys-kernel-config.mount
 #	dab exec systemctl mask systemd-journald-audit.socket
+	# fix lxc console login
+	dab exec systemctl enable getty@tty1.service
 
 #	dab finalize
 	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
