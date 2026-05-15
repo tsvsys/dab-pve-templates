@@ -25,6 +25,7 @@ all: info/init_ok
 #	dab exec systemctl mask sys-kernel-config.mount
 #	dab exec systemctl mask systemd-journald-audit.socket
 	dab exec systemctl mask netplan-configure.service
+	dab exec systemctl mask chrony-wait.service
 
 #	dab finalize
 	# NOTE: zstd appliances are only supported on PVE >= 7.0, take care on upload!
