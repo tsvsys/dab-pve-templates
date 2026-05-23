@@ -18,6 +18,8 @@ all: info/init_ok
 	# base software
 	dab exec dpkg --purge postfix
 	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3 bash-completion
+	# use isc-dhcp-client and ifupdown2 instead of dhcpcd and ifupdown
+	dab install isc-dhcp-client ifupdown2
 	# enable root login over ssh and disable DNS for SSHD
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	sed -i 's/#UseDNS no/UseDNS no/g' ${BASEDIR}/etc/ssh/sshd_config
