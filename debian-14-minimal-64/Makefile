@@ -18,6 +18,8 @@ all: info/init_ok
 	# base software
 	dab exec apt purge -y postfix postfix-lmdb postfix-cdb
 	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3 bash-completion
+	# use ifupdown2 instead of ifupdown
+	dab install ifupdown2
 	# enable root login over ssh and disable DNS for SSHD
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
 	sed -i 's/#UseDNS no/UseDNS no/g' ${BASEDIR}/etc/ssh/sshd_config
