@@ -3,7 +3,7 @@
 BASEDIR:=$(shell dab basedir)
 
 all: info/init_ok
-	dab bootstrap --minimal
+	dab bootstrap --mta none --minimal
 	# disable install recommends for apt
 	echo "APT::Install-Recommends \"false\";" > ${BASEDIR}/etc/apt/apt.conf.d/00InstallRecommends
 	# configure locale
@@ -16,7 +16,7 @@ all: info/init_ok
 	dab exec cp --remove-destination -- /usr/share/zoneinfo/Etc/UTC /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 	# base software
-	dab exec dpkg --purge postfix
+	#dab exec dpkg --purge postfix # no longer needed since dab 3.8.0
 	dab install dbus bzip2 dialog wget traceroute logrotate net-tools vim-nox python3 bash-completion
 	# enable root login over ssh and disable DNS for SSHD
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
