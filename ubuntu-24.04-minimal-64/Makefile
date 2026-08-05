@@ -4,7 +4,7 @@ BASEDIR:=$(shell dab basedir)
 
 all: info/init_ok
     # dab 3.5.2 required to build this template
-	dab bootstrap --minimal
+	dab bootstrap --mta none --minimal
 	echo "APT::Install-Recommends \"false\";" > ${BASEDIR}/etc/apt/apt.conf.d/00InstallRecommends
 	echo "en_US.UTF-8" >${BASEDIR}/etc/locale
 	echo "en_US.UTF-8 UTF-8" > ${BASEDIR}/etc/locale.gen
@@ -14,7 +14,7 @@ all: info/init_ok
 	dab exec cp --remove-destination --  /usr/share/zoneinfo/Etc/UTC /etc/localtime
 	dab exec dpkg-reconfigure -f noninteractive tzdata
 
-	dab exec dpkg --purge postfix
+	#dab exec dpkg --purge postfix # no longer needed since dab 3.8.0
 	dab install bzip2 dialog wget traceroute logrotate net-tools vim-nox python3 bash-completion
 	# enable root over ssh
 	sed -i "s/#PermitRootLogin prohibit-password/PermitRootLogin yes/" ${BASEDIR}/etc/ssh/sshd_config
